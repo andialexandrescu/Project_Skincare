@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Project_Skincare.Data;
 
 namespace Project_Skincare.Controllers
@@ -10,8 +11,11 @@ namespace Project_Skincare.Controllers
         {
             db = context;
         }
-        public IActionResult Index()
+        [HttpGet]
+        public IActionResult Index()// afisarea tuturor produselor, se util GET, intotdeauna se executa implicit http get
         {
+            var l_products = db.Products.Include("Category");
+            ViewBag.AllProducts = l_products;
             return View();
         }
     }
