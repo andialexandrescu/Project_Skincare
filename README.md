@@ -28,6 +28,15 @@ git add .
 git commit -m "Make progress on project" // git commit -m "Add progress on feature"
 git push origin branch-name // modifying the current branch
 ```
+### Optional: merge branch to main branch
+```
+git checkout main
+git pull origin main
+git merge your-branch-name
+git add .
+git commit -m "Resolved merge conflicts"
+git push origin main
+```
 ## Project description
 Platforma “Online shop” cu urmatoarele functionalitati:
  - [ ] Sa existe 4 tipuri de utilizatori: utilizator neinregistrat, inregistrat, colaborator, administrator (0.5p).
